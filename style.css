@@ -1,0 +1,141 @@
+:root{
+ --color-primary:#F7FFF7;
+ --color-black:#0F0E0E;
+ --color-red:#91171F;
+ --color-red-1:#F78E69;
+}
+
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body{
+ font-family: sans-serif;
+}
+
+nav{
+ background-color: var(--color-black);
+ height: 100px;
+ width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 0 5%;
+}
+
+.logo{
+ color: var(--color-red-1);
+ font-size: 30px;
+}
+
+nav ul{
+ list-style: none;
+ display: flex;
+}
+
+nav ul li{
+ padding: 10px 30px;
+ position: relative;
+ margin: 0;
+ 
+}
+
+nav ul li a{
+ color: var(--color-red-1);
+ text-decoration: none;
+ font-size: 20px;
+ transition:0.3s  ;
+ padding: 15px 20px;
+ position: relative;
+ z-index: 1;
+}
+
+nav ul li a::before{
+ content: "";
+ width: 100%;
+ height: 0%;
+ background-color: var(--color-red);
+ position: absolute;
+ top: 0;
+ left: 0;
+ z-index: -1;
+ transition:0.5s ;
+}
+
+nav ul li a::after{
+ content: "";
+  width: 100%;
+  height:0%;
+  background-color: var(--color-red);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  transition:0.5s;
+}
+
+nav ul li a:hover{
+ color: var(--color-primary);
+}
+
+.dropdown{
+ display: none;
+}
+
+nav ul li:hover a::before{
+ height: 50%;
+}
+
+nav ul li:hover a::after {
+ height: 50%;
+}
+
+
+
+/* nav ul li:hover .dropdown {
+ display:block;
+ position: absolute;
+ left: 0;
+ top: 100%;
+ background-color: var(--color-black);
+
+}
+
+nav ul li:hover .dropdown ul {
+ display: block;
+ margin: 10px;
+
+}
+
+nav ul li:hover .dropdown ul li {
+ width: 150px;
+ padding: 10px;
+
+} */
+
+nav ul li ul {
+display: block;
+position: absolute;
+opacity: 0;
+visibility:hidden;
+left: 0;
+top: 100%;
+background-color: var(--color-black);
+transition: .5s;
+}
+
+nav ul li:hover ul{
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+nav ul li ul li {
+  display:block;
+  width: 150px;
+  padding: 10px;
+  margin: 0;
+}
+
